@@ -1,0 +1,7 @@
+1) install react-router-dom --> npm i react-router-dom
+2) install react-router-hash-link --> npm i react-hash-link
+3) install aos --> npm i aos
+4) install mui -->  npm install @mui/material @emotion/react @emotion/styled
+                    npm install @mui/icons-material
+
+

@@ -1,38 +1,290 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navContainer{
+    width: 99vw;
+    background-color: #111210;
+    z-index:1;
+    color: #82827f;
+    justify-content: space-between;
+    padding: 1rem;
+    position: fixed;
+    top:0px;
+    /* flex-wrap: wrap; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navLogo{
+    width:20%;
+    /* border:2px solid blue; */
+    font-size:2.5rem;
+    color: #fff;
+    margin-left: 1rem;
+}   
+
+.navWrapper{
+    width:80%;
+    /* border:2px solid red; */
+    gap:2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-right: 14rem;
 }
 
-.App-link {
-  color: #61dafb;
+.navLink{
+    transition: all ease-in-out .3s;
+    cursor: pointer;
+    text-decoration: none;
+    color:#828074;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navLink:hover{
+    color:#fff;
 }
+
+.hamBurgerIcon{
+    display: none;
+}
+
+/*Resopsive navbar code starts here*/
+@media screen and (max-width:1350px) {
+    .navWrapper{
+        margin-right: 0rem;
+        width:50%;
+    }
+}
+
+@media screen and (max-width:1050px){
+    .hamBurgerIcon{
+        display: block;
+        position: absolute;
+        top:1rem;
+        right:1rem;
+    }
+    .navWrapper{
+        display: none;
+    }
+    .mobileNavContainer{
+        flex-direction: column;
+        align-items: start;
+        gap:0.8rem;
+    }
+    .mobileNavWrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+    }
+
+}
+
+@media screen and (max-width:450px){
+    .navLogo{
+        font-size: 1.8rem;
+    }
+}
+
+
+/*Resopsive navbar code ends here*/
+
+/*Hero section css starts here*/
+.heroContainer{
+    background-color: #111210;
+    color: #fff;
+    padding: 1px;
+}
+
+.heroInfo{
+    background-color: 2px solid white;
+    font-size:2rem;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.heroInfo p{
+    font-weight: 300;
+    color: #82827f;
+    margin-top:1rem;
+    
+}
+.heroInfo .heroName{
+    color:#fff;
+    font-size: 3.5vmax;
+    font-weight: 600;
+}
+.heroInfo .heroDetails{
+    color:#fff;
+    font-size: 2vmax;
+    font-weight: 600;   
+    text-align: center;
+}
+
+.heroInfo span{
+    color:crimson;
+}
+
+.socialLinks{
+    width: 100vw;
+    margin-top: 3rem;
+    gap:1.5rem;
+}
+.socialLinks .icons{
+    font-size: 2.5rem;
+}
+.socialLinks .icons :hover{
+    cursor: pointer !important;
+    color: orange;
+    transition: color ease-in .3s;
+}
+
+/*hero section code ends here*/
+
+/*About me section code starts here*/
+
+.aboutmeContainer{
+    width:100vw;
+    flex-direction: column;
+    padding: 15rem 15rem 0rem 15rem;
+    align-items: flex-start;
+    /* border:2px solid red; */
+
+}
+
+.aboutmeContainer span{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size:3rem;
+}
+
+.aboutmeContainer .aboutmeDescription{
+    font-weight: 400;
+    font-size:2vmax;
+    min-width:300px;
+    color: #727578;
+}
+
+.resumeButton{
+    background-color: #111210;
+    width:30%;
+    margin: auto;
+    gap:1rem;
+    font-size: 1.5rem;
+    padding: 1vmin;
+    margin-top: 5rem;
+    transition: all ease-in .3s;
+}
+
+.resumeButton a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.resumeButton:hover{
+    background-color: #1cabb0;
+}
+
+/*About me responsiveness code starts here*/
+@media screen and (max-width:1050px){
+    .aboutmeContainer{
+        padding: 5rem ;
+    }
+}
+
+@media screen and (max-width:750px){
+    .resumeButton{
+        width:50%;
+    }
+}
+/*About me responsiveness code ends here*/
+
+/*About me section code ends here*/
+
+/* Resume section code starts here */
+.resumeContainer{
+    background:url("./Assets/ResumeSectionImages/blob-scene-haikei.svg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    flex-direction: column;
+    /* border:5px solid rgb(184, 113, 43); */
+    padding:1rem;
+    width:100%;
+    gap:1rem;
+}
+
+.resumeHeading{
+    color:whitesmoke;
+    font-size: 2.5rem;
+    text-decoration: underline;
+    font-weight: 700;
+    width:100%;
+    text-align: center;
+}
+
+.resumeCardWrapper{
+    gap:2rem;
+    /* border: 2px solid blue; */
+    width:100%;
+    flex-wrap: wrap;
+
+}
+
+.resumeCardContainer{
+    /* border: 2px solid blue; */
+    background-color: #ffffff;
+    width:22%;
+    max-width:300px;
+    flex-direction: column;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap:2rem;
+    transition: all ease-in .5s;
+}
+.resumeCardContainer img{
+    width:10vmax;
+    height: 10vmax;
+    object-fit:contain;
+}
+.resumeCardContainer p{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.resumeCardContainer:hover{
+    transform: translateY(-.5rem);
+    box-shadow: 4px 8px 2px rgba(255, 255, 255, 0.2);
+}
+
+/* Resume Section Responsive code starts here */
+@media screen and (max-width:550px){
+    .resumeCardContainer{
+        width:35%;
+    }
+}
+/* Resume Section Responsive code ends here */
+/* Resume section code ends here */
+
+
+/* Project Section code starts here */
+.projectContainer{
+    background-color: #6c26ed;
+    color: white;
+}
+
+
+/* Project Section code ends here */
